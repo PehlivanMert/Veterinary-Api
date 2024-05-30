@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>dev.patika</groupId>
-	<artifactId>LibraryManagmentSystemWithRestApi</artifactId>
+	<artifactId>VeterinaryManagmentSystemWithRestApi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>LibraryManagmentSystemWithRestApi</name>
-	<description>LibraryManagmentSystemWithRestApi</description>
+	<name>VeterinaryManagmentSystemWithRestApi</name>
+	<description>VeterinaryManagmentSystemWithRestApi</description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>

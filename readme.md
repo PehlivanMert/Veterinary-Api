@@ -3,6 +3,20 @@
 This project provides a RESTful API to manage daily operations of a veterinary clinic.
 
 ---
+## Used technologies
+<code><img width="50" src="https://user-images.githubusercontent.com/25181517/117201156-9a724800-adec-11eb-9a9d-3cd0f67da4bc.png" alt="Java" title="Java"/></code>
+<code><img width="50" src="https://user-images.githubusercontent.com/25181517/183891303-41f257f8-6b3d-487c-aa56-c497b880d0fb.png" alt="Spring Boot" title="Spring Boot"/></code>
+<code><img width="50" src="https://user-images.githubusercontent.com/25181517/117207242-07d5a700-adf4-11eb-975e-be04e62b984b.png" alt="Maven" title="Maven"/></code>
+<code><img width="50" src="https://user-images.githubusercontent.com/25181517/183896128-ec99105a-ec1a-4d85-b08b-1aa1620b2046.png" alt="MySQL" title="MySQL"/></code>
+<code><img width="50" src="https://user-images.githubusercontent.com/25181517/192107858-fe19f043-c502-4009-8c47-476fc89718ad.png" alt="REST" title="REST"/></code>
+<code><img width="50" src="https://user-images.githubusercontent.com/25181517/186711335-a3729606-5a78-4496-9a36-06efcc74f800.png" alt="Swagger" title="Swagger"/></code>
+<code><img width="50" src="https://user-images.githubusercontent.com/25181517/192109061-e138ca71-337c-4019-8d42-4792fdaa7128.png" alt="Postman" title="Postman"/></code>
+<code><img width="50" src="https://user-images.githubusercontent.com/25181517/192108890-200809d1-439c-4e23-90d3-b090cf9a4eea.png" alt="IntelliJ" title="IntelliJ"/></code>
+<code><img width="50" src="https://user-images.githubusercontent.com/25181517/192108372-f71d70ac-7ae6-4c0d-8395-51d8870c2ef0.png" alt="Git" title="Git"/></code>
+<code><img width="50" src="https://user-images.githubusercontent.com/25181517/192108374-8da61ba1-99ec-41d7-80b8-fb2f7c0a4948.png" alt="GitHub" title="GitHub"/></code>
+<code><img width="50" src="https://user-images.githubusercontent.com/25181517/192108893-b1f1717e-8f17-44f8-85c1-04b80e1171a9.png" alt="Docker" title="Docker"/></code>
+<code><img width="50" src="https://user-images.githubusercontent.com/25181517/183911544-95ad6ba7-09bf-4044-8e58-a27b3e7a5bc6.png" alt="PostgreSQL" title="PostgreSQL"/></code>
+
 
 ## Features
 
@@ -58,13 +72,18 @@ You can follow these steps to use the project:
 3. Install dependencies: Maven will automatically download the required dependencies.
 4. VeterinaryManagementSystemDatabase.sql file is provided in the project. You can use this file to create the database and tables.
 5. VeterinaryManagementSystem.postman_collection.json file is provided in the project. You can use this file to import the API endpoints to Postman.
-6. "Alternatively, the API can be used via Swagger. Go to http://localhost:8080/swagger-ui/index.html#/ in your browser."
+6. Alternatively, the API can be used via Swagger. Go to http://localhost:8080/swagger-ui/index.html#/ in your browser.
 7. Start the application: Run the main class `dev.patika.veterinarymanagementsystem.VeterinaryManagementSystemApplication` to start the application. 
 8. Spring Boot will automatically start the application on port 8080.
 9. Use the API endpoints to manage the veterinary clinic. 
-10. You can also use the API documentation to understand the available endpoints and their usage. 
-
-
+10. You can also use the API documentation to understand the available endpoints and their usage.
+11. Docker-compose.yml and Dockerfile is provided in the project. You can use this file to create a Docker image and run the application in a Docker container with PostgreSQL.
+12. For Docker, you can use the following commands:
+    - `docker-compose up` to create the Docker image and run the container.
+    - `docker-compose up --build` to rebuild the image and run the container.
+    - `docker-compose down` to stop the container and remove the image.
+    - The application will be available at http://localhost:8080.
+    - The PostgreSQL database will be available at http://localhost:5432.
 
 ---
 

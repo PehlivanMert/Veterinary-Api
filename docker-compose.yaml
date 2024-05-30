@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  spring-app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      VETAPP_DB_PASS: 1514
+      VETAPP_DB_URL: jdbc:postgresql://postgres:5432/
+      VETAPP_DB_NAME: VeterinaryManagementSystemDatabase
+      VETAPP_DB_USER: postgres
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16.3
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1514
+      POSTGRES_DB: VeterinaryManagementSystemDatabase
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
