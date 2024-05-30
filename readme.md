@@ -58,10 +58,11 @@ You can follow these steps to use the project:
 3. Install dependencies: Maven will automatically download the required dependencies.
 4. VeterinaryManagementSystemDatabase.sql file is provided in the project. You can use this file to create the database and tables.
 5. VeterinaryManagementSystem.postman_collection.json file is provided in the project. You can use this file to import the API endpoints to Postman.
-6. Start the application: Run the main class `dev.patika.veterinarymanagementsystem.VeterinaryManagementSystemApplication` to start the application. 
-7. Spring Boot will automatically start the application on port 8080.
-8. Use the API endpoints to manage the veterinary clinic. 
-9. You can also use the API documentation to understand the available endpoints and their usage. 
+6. "Alternatively, the API can be used via Swagger. Go to http://localhost:8080/swagger-ui/index.html#/ in your browser."
+7. Start the application: Run the main class `dev.patika.veterinarymanagementsystem.VeterinaryManagementSystemApplication` to start the application. 
+8. Spring Boot will automatically start the application on port 8080.
+9. Use the API endpoints to manage the veterinary clinic. 
+10. You can also use the API documentation to understand the available endpoints and their usage. 
 
 
 
