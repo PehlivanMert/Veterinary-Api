@@ -19,12 +19,12 @@ public class CustomerUpdateRequest {
     private Long customerId;
     @NotNull(message = "Müşteri ismi boş veya null olamaz")
     private String name;
-    @NotNull(message = "Telefon numarası kısmı boş veya null olamaz")
-    private String phone;
     @Email(message = "Lütfen mail adresinizi doğru karakterlerle giriniz")
     private String mail;
     @NotNull(message = "Adres kısmı boş veya null olamaz")
     private String address;
     @NotNull(message = "Şehir kısmı boş veya null olamaz")
     private String city;
+    @NotNull(message = "Telefon numarası kısmı boş veya null olamaz")
+    private String phone;
 }

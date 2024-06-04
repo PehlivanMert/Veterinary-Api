@@ -15,17 +15,16 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     private Long customerId;
-
     @Column(name = "customer_name", nullable = false)
     private String name;
-    @Column(name = "customer_phone", nullable = false)
-    private String phone;
     @Column(name = "customer_mail")
     private String mail;
     @Column(name = "customer_address")
     private String address;
     @Column(name = "customer_city")
     private String city;
+    @Column(name = "customer_phone", nullable = false)
+    private String phone;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
