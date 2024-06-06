@@ -43,15 +43,15 @@ public class AnimalController {
 
     @GetMapping("/byname/{name}") // Değerlendirme 16
     @ResponseStatus(HttpStatus.OK)
-    public ResultData<List<AnimalResponse>> getByName(@PathVariable("name") String customerName) {
-        return ResultHelper.success(this.animalService.getByName(customerName));
+    public ResultData<List<AnimalResponse>> getByName(@PathVariable("name") String name) {
+        return ResultHelper.success(this.animalService.getByName(name));
     }
 
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
     public ResultData<CursorResponse<AnimalResponse>> cursor(
             @RequestParam(name = "page", required = false, defaultValue = "0") int page,
-            @RequestParam(name = "pageSize", required = false, defaultValue = "10") int pageSize
+            @RequestParam(name = "pageSize", required = false, defaultValue = "1000") int pageSize
 
     ) {
         return ResultHelper.cursor(this.animalService.cursor(page,pageSize));

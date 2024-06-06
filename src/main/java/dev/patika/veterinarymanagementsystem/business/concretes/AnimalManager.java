@@ -77,7 +77,7 @@ public class AnimalManager implements IAnimalService {
     @Override
     public AnimalResponse update(AnimalUpdateRequest animalUpdate) {
 
-        if (existsByNameAndCustomer_CustomerIdAndSpeciesAndBreedAndDateOfBirth
+        if ((animalUpdate.getAnimalId() == 0) && existsByNameAndCustomer_CustomerIdAndSpeciesAndBreedAndDateOfBirth
                 (animalUpdate.getName(), animalUpdate.getCustomerId(),
                         animalUpdate.getSpecies(), animalUpdate.getBreed(), animalUpdate.getDateOfBirth())) {
             throw new ConflictException("Animal Already Exist");

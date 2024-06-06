@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class AnimalUpdateRequest {
     @Positive(message = "Id değeri pozitif sayı olmak zorundadır")
-    private Long id;
+    private Long animalId;
     @NotNull(message = "İsim boş veya null olamaz")
     private String name;
     @NotNull(message = "Tür boş veya null olamaz")

@@ -38,7 +38,7 @@ public class AvailableDateController {
     @ResponseStatus(HttpStatus.OK)
     public ResultData<CursorResponse<AvailableDateResponse>> cursor(
             @RequestParam(name = "page", required = false, defaultValue = "0") int page,
-            @RequestParam(name = "pageSize", required = false, defaultValue = "10") int pageSize
+            @RequestParam(name = "pageSize", required = false, defaultValue = "1000") int pageSize
 
     ) {
         return ResultHelper.cursor(this.availableDateServices.cursor(page, pageSize));
