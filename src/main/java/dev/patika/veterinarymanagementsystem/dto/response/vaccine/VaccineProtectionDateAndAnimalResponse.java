@@ -13,8 +13,10 @@ import java.time.LocalDate;
 public class VaccineProtectionDateAndAnimalResponse {
     private Long vaccineId;
     private String name;
-    private String code;
+    private String vaccineCode;
+    private LocalDate protectionStartDate;
     private LocalDate protectionFinishDate;
-    private AnimalResponse animal;
+    private Long animalId;
+    private Long reportId;
 
 }

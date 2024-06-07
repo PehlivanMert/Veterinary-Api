@@ -14,8 +14,9 @@ import java.time.LocalDate;
 public class VaccineResponse {
     private Long vaccineId;
     private String name;
-    private String code;
+    private String vaccineCode;
     private LocalDate protectionStartDate;
     private LocalDate protectionFinishDate;
     private Long animalId;
+    private Long reportId;
 }
