@@ -1,6 +1,7 @@
 package dev.patika.veterinarymanagementsystem.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,5 +31,9 @@ public class Appointment {
     @ManyToOne()
     @JoinColumn(name = "appointment_doctor_id", referencedColumnName = "doctor_id")
     private Doctor doctor;
+
+    @OneToOne (mappedBy = "appointment")
+    @JsonIgnore
+    private Report report;
 
 }

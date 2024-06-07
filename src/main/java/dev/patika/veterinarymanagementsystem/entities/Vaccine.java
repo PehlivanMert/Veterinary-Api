@@ -35,4 +35,10 @@ public class Vaccine {
     @ManyToOne()
     @JoinColumn(name = "vaccine_animal_id", referencedColumnName = "animal_id")
     private Animal animal;
+
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vaccine_report_id", referencedColumnName = "id")
+    private Report report;
+
 }

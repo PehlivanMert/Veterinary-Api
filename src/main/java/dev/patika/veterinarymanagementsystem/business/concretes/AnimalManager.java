@@ -27,10 +27,7 @@ public class AnimalManager implements IAnimalService {
     private final IModelMapperService modelMapper;
     private final ICustomerService customerService;
 
-    public AnimalManager
-            (IAnimalRepo animalRepo,
-             IModelMapperService modelMapper,
-             ICustomerService customerService) {
+    public AnimalManager(IAnimalRepo animalRepo, IModelMapperService modelMapper, ICustomerService customerService) {
         this.animalRepo = animalRepo;
         this.customerService = customerService;
         this.modelMapper = modelMapper;
@@ -38,9 +35,7 @@ public class AnimalManager implements IAnimalService {
 
     @Override
     public AnimalResponse save(AnimalSaveRequest animalSave) {
-        if (existsByNameAndCustomer_CustomerIdAndSpeciesAndBreedAndDateOfBirth
-                (animalSave.getName(), animalSave.getCustomerId(),
-                        animalSave.getSpecies(), animalSave.getBreed(), animalSave.getDateOfBirth())) {
+        if (existsByNameAndCustomer_CustomerIdAndSpeciesAndBreedAndDateOfBirth(animalSave.getName(), animalSave.getCustomerId(), animalSave.getSpecies(), animalSave.getBreed(), animalSave.getDateOfBirth())) {
             throw new ConflictException("Animal Already Exist");
         }
 
@@ -54,14 +49,12 @@ public class AnimalManager implements IAnimalService {
 
     @Override
     public AnimalResponse getAnimalResponse(Long id) {
-        return this.modelMapper.forResponse().
-                map(this.get(id), AnimalResponse.class);
+        return this.modelMapper.forResponse().map(this.get(id), AnimalResponse.class);
     }
 
     @Override
     public Animal get(Long id) {
-        return this.animalRepo.findById(id).
-                orElseThrow(() -> new NotFoundException(Msg.NOT_FOUND));
+        return this.animalRepo.findById(id).orElseThrow(() -> new NotFoundException(Msg.NOT_FOUND));
     }
 
     @Override
@@ -70,16 +63,13 @@ public class AnimalManager implements IAnimalService {
         Pageable pageable = PageRequest.of(page, pageSize);
         Page<Animal> animalPage = this.animalRepo.findAll(pageable);
 
-        return animalPage.map(animal -> this.modelMapper.forResponse()
-                .map(animal, AnimalResponse.class));
+        return animalPage.map(animal -> this.modelMapper.forResponse().map(animal, AnimalResponse.class));
     }
 
     @Override
     public AnimalResponse update(AnimalUpdateRequest animalUpdate) {
 
-        if ((animalUpdate.getAnimalId() == 0) && existsByNameAndCustomer_CustomerIdAndSpeciesAndBreedAndDateOfBirth
-                (animalUpdate.getName(), animalUpdate.getCustomerId(),
-                        animalUpdate.getSpecies(), animalUpdate.getBreed(), animalUpdate.getDateOfBirth())) {
+        if ((animalUpdate.getAnimalId() == 0) && existsByNameAndCustomer_CustomerIdAndSpeciesAndBreedAndDateOfBirth(animalUpdate.getName(), animalUpdate.getCustomerId(), animalUpdate.getSpecies(), animalUpdate.getBreed(), animalUpdate.getDateOfBirth())) {
             throw new ConflictException("Animal Already Exist");
         }
 
@@ -93,8 +83,7 @@ public class AnimalManager implements IAnimalService {
 
     @Override
     public boolean delete(Long id) {
-        Animal animal = this.animalRepo.findById(id).
-                orElseThrow(() -> new NotFoundException(Msg.NOT_FOUND));
+        Animal animal = this.animalRepo.findById(id).orElseThrow(() -> new NotFoundException(Msg.NOT_FOUND));
         this.animalRepo.delete(animal);
         return true;
 
@@ -102,25 +91,17 @@ public class AnimalManager implements IAnimalService {
 
     @Override
     public List<VaccineResponse> getVaccines(Long id) {
-        return this.get(id).getVaccineList().stream()
-                .map(vaccine -> this.modelMapper.forResponse()
-                        .map(vaccine, VaccineResponse.class))
-                .toList();
+        return this.get(id).getVaccineList().stream().map(vaccine -> this.modelMapper.forResponse().map(vaccine, VaccineResponse.class)).toList();
     }
 
     @Override
     public List<AnimalResponse> getByName(String name) {
-        return this.animalRepo.findByName(name).stream()
-                .map(animal -> this.modelMapper.forResponse()
-                        .map(animal, AnimalResponse.class))
-                .toList();
+        return this.animalRepo.findByName(name).stream().map(animal -> this.modelMapper.forResponse().map(animal, AnimalResponse.class)).toList();
     }
 
     @Override
-    public Boolean existsByNameAndCustomer_CustomerIdAndSpeciesAndBreedAndDateOfBirth
-            (String name, Long customerId, String species, String breed, LocalDate dateOfBirth) {
+    public Boolean existsByNameAndCustomer_CustomerIdAndSpeciesAndBreedAndDateOfBirth(String name, Long customerId, String species, String breed, LocalDate dateOfBirth) {
 
-        return this.animalRepo.existsByNameAndCustomer_CustomerIdAndSpeciesAndBreedAndDateOfBirth
-                (name, customerId, species, breed, dateOfBirth);
+        return this.animalRepo.existsByNameAndCustomer_CustomerIdAndSpeciesAndBreedAndDateOfBirth(name, customerId, species, breed, dateOfBirth);
     }
 }

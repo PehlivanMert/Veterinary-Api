@@ -22,4 +22,6 @@ public class VaccineSaveRequest {
     private String vaccineCode;
     @NotNull(message = "Hayvan id'si boş veya null olamaz")
     private Long animalId;
+    @NotNull(message = "Rapor id'si boş veya null olamaz")
+    private Long reportId;
 }
