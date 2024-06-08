@@ -1,6 +1,7 @@
 # Veterinary Clinic Management System API
 
 ### This project provides a RESTful API to manage daily operations of a veterinary clinic.
+### Backend Live Demo: [Veterinary Management System API](https://veterinary-api.onrender.com/swagger-ui/index.html#/)
 
 
 ## Used technologies
@@ -96,7 +97,7 @@ If you have any questions or feedback, please send an email to [pehlivanmert@out
 
 ## UML Diagram
 
-<img alt="VeterinaryManagementSystemProjectUmlDiagram.png" height="600" src="VeterinaryManagementSystemProjectUmlDiagram.png" width="600"/>
+<img alt="VeterinerUml.png" height="600" src="VeterinerUml.png" width="600"/>
 
 ---
 
@@ -338,6 +339,43 @@ This project contains a RESTful API that provides a veterinary clinic management
 **Endpoint:** `DELETE /v1/vaccines/{id}`
 
 **Description:** Deletes a specific vaccine.
+
+## Reports API
+
+### 1. Save Report
+
+**Endpoint:** `POST /v1/reports`
+
+**Description:** Creates a new report record.
+
+### 2. Report Details
+
+**Endpoint:** `GET /v1/reports/{id}`
+
+**Description:** Retrieves the details of a specific report.
+
+### 3. Paged Report List
+
+**Endpoint:** `GET /v1/reports`
+
+**Description:** Retrieves a paged list of reports.
+
+**Query Parameters:**
+- `page` (optional, default: `0`): Page number.
+- `pageSize` (optional, default: `1000`): Number of reports per page.
+
+### 4. Update Report
+
+**Endpoint:** `PUT /v1/reports`
+
+**Description:** Updates the details of a report.
+
+### 5. Delete Report
+
+**Endpoint:** `DELETE /v1/reports/{id}`
+
+**Description:** Deletes a specific report.
+
 ```
 
 "The software will take us to the stars." 
